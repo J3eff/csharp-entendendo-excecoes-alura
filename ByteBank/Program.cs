@@ -6,21 +6,20 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
+
             try
             {
-                Metodo();
-            }
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("Não é possível divisão por zero.");
+                ContaCorrente conta = new ContaCorrente(0, 0);
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-                Console.WriteLine("Aconteceu um erro!");
             }
 
+            //Metodo();
+
+            Console.WriteLine("Execução finalizada. Tecle enter para sair");
             Console.ReadLine();
         }
 
@@ -45,11 +44,10 @@ namespace ByteBank
             }
             catch (DivideByZeroException)
             {
-               Console.WriteLine($"Exceção com numero={numero} e divisor={divisor}");
-               throw;
-               Console.WriteLine("Código depois do throw");
+                Console.WriteLine($"Exceção com numero={numero} e divisor={divisor}");
+                throw;
             }
-            
+
         }
 
     }

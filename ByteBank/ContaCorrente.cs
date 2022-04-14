@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace ByteBank
 {
     public class ContaCorrente
@@ -28,6 +29,12 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
+            if(agencia <= 0 || numero <= 0)
+            {              
+                throw new Exception("A Agencia e o Numero devem ser maior que 0!");
+                // Queremmos lançar uma exceção
+            }
+
             Agencia = agencia;
             Numero = numero;
 
