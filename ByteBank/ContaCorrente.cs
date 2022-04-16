@@ -7,7 +7,7 @@ namespace ByteBank
         public static double TaxaOperacao { get; private set; }
         public static int TotalDeContasCriadas { get; private set; }
         public Cliente Titular { get; set; }
-                
+
         public int Numero { get; }
         public int Agencia { get; }
 
@@ -29,11 +29,11 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
-            if(agencia <= 0 || numero <= 0)
-            {              
-                throw new Exception("A Agencia e o Numero devem ser maior que 0!");
-                // Queremmos lançar uma exceção
-            }
+            if (agencia <= 0)
+                throw new ArgumentException("O argumento agencia deve ser maior que 0");
+
+            if (numero <= 0)
+                throw new ArgumentException("O argumento numero deve ser maior que 0");
 
             Agencia = agencia;
             Numero = numero;

@@ -9,15 +9,20 @@ namespace ByteBank
 
             try
             {
-                ContaCorrente conta = new ContaCorrente(0, 0);
+                ContaCorrente conta = new ContaCorrente(514, 5640);
 
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException"); 
+                Console.WriteLine(e.Message);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            //Metodo();
+            Metodo();
 
             Console.WriteLine("Execução finalizada. Tecle enter para sair");
             Console.ReadLine();
@@ -32,8 +37,24 @@ namespace ByteBank
 
         private static void TestaDivisao(int divisor)
         {
-            int resultado = Dividir(10, divisor);
-            Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
+            try
+            {
+                Dividir(10, divisor);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine("Fui capturado pelo (NullReferenceException ex)"); 
+                Console.WriteLine(ex.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Fui capturado pelo (Exception ex)");
+                Console.WriteLine(ex.StackTrace);
+            }
+
+
+           //int resultado = Dividir(10, divisor);
+           //Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
         }
 
         private static int Dividir(int numero, int divisor)
