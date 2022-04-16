@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2A4F584B-279B-4C33-9CBB-3A9C991D7058}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_07_ByteBank</RootNamespace>
-    <AssemblyName>07-ByteBank</AssemblyName>
+    <RootNamespace>ByteBank</RootNamespace>
+    <AssemblyName>ByteBank</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
     <Compile Include="ContaCorrente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaldoInsuficienteException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
